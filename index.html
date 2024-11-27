@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <section id="home">
+    <div class="container ">
+        <div class="row">
+            <div class="one py-5 text-center"><h1>Bookmarker</h1></div>
+            
+        <h2 class="text-center my-5"><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
+        <div  class="form">
+            <div>
+                <label for="bookmarkname"><i class="fa-solid fa-book-bookmark pe-2"></i>Site Name</label>
+                <input type="text" placeholder="Bookmark Name" id="bookmarkname" class="form-control my-2" >
+            </div>
+            <div>
+                <label for="site"><i class="fa-solid fa-link pe-2"></i>Site URL</label>
+                <input type="url" placeholder="Wepsite URL" id="site" class="form-control my-2">
+            </div>
+            <div class="text-center py-4 "><button class="btn btn-danger px-5" id="addBtn">Submit</button></div>
+            
+        </div>
+        <table class="table mt-4 text-center bg-light">
+            <thead>
+                <tr> 
+                    <th>Index</th>
+                    <th>Website Name</th>
+                    <th>Visit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="tabledata">
+            <tr>
+                
+            </tr>
+            </tbody>
+            
+        </table>
+    </div>
+    </div> 
+    
+</section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

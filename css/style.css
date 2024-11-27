@@ -1,0 +1,47 @@
+#home{
+    background-color: #F7ECDE;
+    height: 100vh;
+}
+h1{
+    font-family: "Pacifico", cursive;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 60px;
+    color: #352E28;
+    background-color: #FEC260;
+    display: inline-block;
+}
+h2{
+    font-family: "Righteous", cursive;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+    background: linear-gradient(90deg,#45A55A,#FEC260);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+label{
+    font-family: "PT Sans Caption", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+table th{
+    font-family: "PT Sans Caption", sans-serif;
+    font-weight: 700;
+    font-size: 16PX;
+    line-height: 24PX;
+    color: rgb(33, 37, 41);
+}
+
+table td{
+    font-family: "PT Sans Caption", sans-serif;
+    font-weight: 700;
+    font-size: 16PX;
+    line-height: 24PX;
+    color: rgb(33, 37, 41);
+}
