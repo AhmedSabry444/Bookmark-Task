@@ -1,49 +1,63 @@
 var siteName = document.getElementById('bookmarkname')
 var url = document.getElementById('site')
 var addBtn = document.getElementById('addBtn')
+var searchinput = document.getElementById('search')
 var sList = [];
 addBtn.onclick = addSiteName
 
 
+siteName.addEventListener("input",function(){
+    validation(this)
+})
 
+url.addEventListener("input",function(){
+    validation(this)
+})
 
+function validation(input){
 
-var testSite = document.querySelector('#site')
-testSite.addEventListener('input',function(){var regex = /^([A-z]{1,}|\w{1,})\.com$/
-    var myStr = site.value;
-    
-    if(regex.test(myStr)==true){
-    console.log('match')
-    }else{
-        console.log('Not Match')
+    var validate={
+        bookmarkname:/^[a-z A-Z]{3,16}$/,
+        site:/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/
+    }
+
+    if(validate[input.id].test(input.value)){
+        input.classList.add("is-valid")
+        input.classList.remove("is-invalid")
+        return true
+    }
+    else{
+        input.classList.remove("is-valid")
+        input.classList.add("is-invalid")
+        return false
     }
 }
-)
 
 
-var testName = document.querySelector('#bookmarkname')
-testName.addEventListener('input',function(){var regex = /\w{3,}/
-    var myStrn = bookmarkname.value;
-    
-    if(regex.test(myStrn)==true){
-    console.log('match')
-    }else{
-        console.log('Not Match')
-    }
-}
-)
+
+
+
 
 
 function addSiteName(){
-    
-    var siteName={
-        sName:bookmarkname.value,
-        sUrl:site.value,
+
+    if(validation(bookmarkname)==true&&validation(site)==true){
+        var siteName={
+            sName:bookmarkname.value,
+            sUrl:site.value,
+        }
+        
+        sList.push(siteName)
+        display();
+        resetForm();
     }
-    
-    sList.push(siteName)
-    display();
-    resetForm();
+    else{
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+        });
+    }
 }
 
 
@@ -54,9 +68,9 @@ function display(){
     for(var i=0 ; i<sList.length; i++ ){
         cartona+=`<tbody id="tabledata">
             <tr>
-                <td>${i}</td>
+                <td>${i+1}</td>
                 <td>${sList[i].sName}</td>
-                <td><button class="btn btn-success" onclick="visit()"><i class="fa-solid fa-eye"></i> Visit</button></td>
+                <td><button class="btn btn-success" onclick="visit(${i})"><i class="fa-solid fa-eye"></i> Visit</button></td>
                 <td><button class="btn btn-danger" onclick="deletes(${i})"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i> Delete</button></td>
             </tr>
             </tbody>`
@@ -75,9 +89,8 @@ sList.splice(index,1);
 display();
 }
 
-function visit(){
-
-    window.open(site.value);
+function visit(i){
+    window.open(sList[i].sUrl);
 }
 
 

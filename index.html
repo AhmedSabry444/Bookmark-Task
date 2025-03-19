@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body>
+<body class="bod">
     <section id="home">
     <div class="container ">
         <div class="row">
@@ -31,7 +31,11 @@
             </div>
             <div>
                 <label for="site"><i class="fa-solid fa-link pe-2"></i>Site URL</label>
-                <input type="url" placeholder="Wepsite URL" id="site" class="form-control my-2">
+                <input type="url" placeholder="Wepsite URL" id="site" class="form-control my-2 ">
+            </div>
+            <div>
+                <label for="search"><i class="fa-solid fa-magnifying-glass pe-2"></i>Search</label>
+                <input type="url" placeholder="Search" id="search" class="form-control my-2 ">
             </div>
             <div class="text-center py-4 "><button class="btn btn-danger px-5" id="addBtn">Submit</button></div>
             
@@ -56,7 +60,9 @@
     </div> 
     
 </section>
+    
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
